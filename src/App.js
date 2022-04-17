@@ -2,22 +2,25 @@ import { useState } from 'react';
 import SearchLocation from './components/SearchLocation';
 import LocationContainer from './components/LocationContainer';
 import { getNumberRandom } from './helpers/getNumberRandom';
+import './styles/styles.css'
+import fondo from './img/rickandmorty.jpg'
 
-
-import './App.css';
-
-const App =() => {
+const App = () => {
 
   const [location, setLocation] = useState(getNumberRandom());
 
   return (
-    <div className="App">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <SearchLocation setLocation={setLocation}/>
+    <div className='app'>
+      <header className='head'>
 
-        <LocationContainer location={location} />
+        <img className='img' src={fondo}></img>
+        <div className='search'>
+          <SearchLocation setLocation={setLocation} />
+        </div>
       </header>
+      <div>
+        <LocationContainer location={location} setLocation={setLocation} />
+      </div>
     </div>
   );
 }

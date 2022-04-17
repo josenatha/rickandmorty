@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import ResidentInfo from './ResidentInfo';
-
+import '../styles/styles.css'
 const ResidentContainer = ({ residents }) => {
 
     const [residentsData, setResidentsData] = useState([])
@@ -17,10 +17,11 @@ const ResidentContainer = ({ residents }) => {
     console.log(residentsData);
 
     return (
-        <div>
+        <div className='flex'>
             {residentsData &&
                 residentsData.map( ({ id, name, image, status, origin, episode }) =>
-                    <ResidentInfo
+                   
+                <ResidentInfo
                         key={ id }
                         resName={ name }
                         resImg={ image }

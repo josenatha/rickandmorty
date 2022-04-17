@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import LocationInfo from './LocationInfo';
 import ResidentContainer from './ResidentContainer';
-
+import '../styles/styles.css'
 const LocationContainer = ({ location }) => {
     const [ locationData , setLocationData] = useState()
 
@@ -12,7 +12,7 @@ const LocationContainer = ({ location }) => {
     }, [location])
 
     return (
-        <div>
+        <div className='bgflex'>
             {locationData &&
             <>
                 <LocationInfo
@@ -21,7 +21,10 @@ const LocationContainer = ({ location }) => {
                     locDimension={ locationData.dimension }
                     locPupulation={ locationData.residents.length }
                 />
+                <div className='bg color'>
+
                 <ResidentContainer residents={ locationData.residents } />
+                </div>
             </>
             }
         </div>
