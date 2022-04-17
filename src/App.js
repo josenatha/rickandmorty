@@ -13,7 +13,7 @@ const App = () => {
     <div className='app'>
       <header className='head'>
 
-        <img className='img' src={fondo}></img>
+        <img className='img' alt='imgfondo' src={fondo}></img>
         <div className='search'>
           <SearchLocation setLocation={setLocation} />
         </div>
