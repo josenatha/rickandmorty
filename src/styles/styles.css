@@ -9,7 +9,7 @@
     background-color: #403F4C;
     display: flex;
     flex-wrap: wrap;
-    justify-content: end;
+    justify-content: flex-end;
 }
 .img{
     width: 100%;
