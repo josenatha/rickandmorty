@@ -8,8 +8,10 @@ const ResidentContainer = ({ residents }) => {
 
     useEffect(() => {
         residents.map( (url) => {
-            axios.get(url)
-                .then( ({data}) => setResidentsData((prevState) => [...prevState, data]));
+            return axios.get(url) 
+            .then( ({data}) => setResidentsData((prevState) => [...prevState, data]));
+           
+            
         });
         return () => {setResidentsData([])}
     }, [residents])
